@@ -15,8 +15,11 @@
     "express": "^4.13.3",
     "history": "^1.13.0",
     "immutable": "^3.7.5",
+    "node-jsx": "^0.13.3",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
+    "react-dom-stream": "^0.1.5",
+    "react-engine": "^2.5.0",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0-rc3",
     "redux": "^3.0.4"

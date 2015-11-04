@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Navigation from './components/navigation.jsx';
  
 class App extends React.Component{
   render() {
     return (
       <div>
-        Hello World testing!
+      <Navigation />
+      Other content goes here
       </div>
     )
   }

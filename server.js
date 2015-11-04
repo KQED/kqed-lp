@@ -1,10 +1,12 @@
 var express = require('express');
-var path = require('path');
 var React = require('react');
-var fs = require('fs');
+var ReactDOMStream = require('react-dom-stream/server');
+var App = React.createFactory(require('./client/App'));
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
+
+require('node-jsx').install();
 
 var PORT = process.env.PORT || 8080;
 var server = app.listen(PORT);
