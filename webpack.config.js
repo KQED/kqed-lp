@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-  './client/App.js'
+      './client/App.js'
   ],
   output: {
     filename: 'public/bundle.js'
@@ -18,7 +18,3 @@ module.exports = {
     ]
   }
 };
-
-// {
-//   "presets": ["es2015", "react"]
-// }
