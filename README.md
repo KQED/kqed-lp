@@ -12,7 +12,7 @@ Prototype for KQED LP
 - run `npm install`
 
 ## Start development environment
-- Run `webpack-dev-server --content-base public/` in the terminal
+- Run `node devServer.js` in the terminal
 
 ##Testing
 - To run testing suite in the terminal:

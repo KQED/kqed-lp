@@ -7,7 +7,7 @@ class App extends React.Component{
     return (
       <div>
       <Navigation />
-      Other content goes here
+      Other content goes here.
       </div>
     )
   }
