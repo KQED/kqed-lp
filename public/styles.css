@@ -6,9 +6,7 @@
 .ui.slider.range input[type="range"] {
   width: 100%;
   -webkit-appearance: none;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 3px 5px;
 }
 

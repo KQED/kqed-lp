@@ -1,6 +1,8 @@
 import ReactPlayer from 'react-player';
 import React from 'react';
-import ProgressBar from 'react-progress-bar-plus';
+import AddToPlaylist from './add.jsx';
+import Donate from './donate.jsx';
+import Share from './share.jsx';
 
 export default class Audio extends React.Component {
   constructor(props) {
@@ -14,7 +16,6 @@ export default class Audio extends React.Component {
       volume: 0
     };
     this.playPause = this.playPause.bind(this);
-    this.scrub = this.scrub.bind(this);
     this.onProgress = this.onProgress.bind(this);
     this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
     this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
@@ -38,11 +39,7 @@ export default class Audio extends React.Component {
         this.setState(state);
       }
     }
-  scrub() {
-    console.log('registered');
-  }
   render() {
-    console.log(this.state.played);
     return (
       <div className="seven wide column">
         <ReactPlayer
@@ -59,12 +56,13 @@ export default class Audio extends React.Component {
             onChange={this.onSeekChange}
             onMouseUp={this.onSeekMouseUp} />
         </div>
-        <div className="ui compact segment">
           <button className="ui button" onClick={this.playPause}>
             <i className={this.state.playing ? "pause icon" : "play icon"}></i>
             {this.state.playing ? "Pause" : "Play"}
           </button>
-        </div>
+          <AddToPlaylist />
+          <Donate />
+          <Share />
       </div>
       )
     }
