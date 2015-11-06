@@ -3,6 +3,7 @@ var app = express();
 var webpack = require('webpack');
 var config = require('./webpack.config.dev');
 var compiler = webpack(config);
+var path = require('path');
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true
@@ -26,6 +27,10 @@ var index = function(req, res) {
 };
 
 app.get('', index);
+
+app.get('/styles.css', function(req, res) {
+  res.sendFile(path.join(__dirname, 'public/styles.css'));
+});
 
 var PORT = process.env.PORT || 8080;
 var server = app.listen(PORT);

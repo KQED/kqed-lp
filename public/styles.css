@@ -1,0 +1,32 @@
+.react-progress-bar-percent {
+  background-color: blue;
+  height: 10px;
+}
+
+.ui.slider.range input[type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  padding: 3px 5px;
+}
+
+.ui.slider.range input[type="range"]::-moz-range-track {
+  background: none;
+  border: none;
+}
+
+.ui.slider.range input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #89B84C;
+  height: 0.7em;
+  width: 0.7em;
+}
+
+.ui.slider.range input[type="range"]::-moz-range-thumb {
+  background: #89B84C;
+  border-color: #89B84C;
+  height: 0.7em;
+  width: 0.7em;
+}
