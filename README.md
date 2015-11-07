@@ -16,4 +16,4 @@ Prototype for KQED LP
 
 ##Testing
 - To run testing suite in the terminal:
-  -`npm test`
+  - `npm test`

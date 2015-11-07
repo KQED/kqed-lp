@@ -28,3 +28,7 @@
   height: 0.7em;
   width: 0.7em;
 }
+
+.react-index-top {
+  z-index: 9999;
+}
