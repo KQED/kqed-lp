@@ -25,7 +25,7 @@ export default class Navigation extends React.Component {
             <i className="user icon"></i>
             Log in
           </div>
-          <div className="ui right item">
+          <div className="ui right item react-index-top">
             <div className="ui icon input">
               <input type="text" placeholder="Search..." />
               <i className="search link icon"></i>
