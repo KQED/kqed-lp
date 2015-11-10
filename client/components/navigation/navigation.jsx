@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from 'react-sidebar';
+import SidebarDrag from './sidebarDrag.jsx';
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -13,7 +13,6 @@ export default class Navigation extends React.Component {
     this.setState({sidebarOpen: !this.state.sidebarOpen});
   }
   render() {
-    let sidebarContent = <div className="item react-sidebar">Test content</div>
 
     return (
       <div>
@@ -33,11 +32,7 @@ export default class Navigation extends React.Component {
             </div>
           </div>
         </div>
-          <Sidebar sidebar={sidebarContent}
-            open={this.state.sidebarOpen}
-            onSetOpen={this.toggleSidebar}>
-            <div></div>
-          </Sidebar>
+          <SidebarDrag sidebarOpen={this.state.sidebarOpen} toggleSidebar={this.toggleSidebar}/>
       </div>
     );
   }

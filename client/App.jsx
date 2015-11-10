@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navigation from './components/navigation.jsx';
+import Navigation from './components/navigation/navigation.jsx';
 import Audio from './components/audioPlayer/audio.jsx';
 import PlaylistContainer from './components/playlist/playlistContainer.jsx';
 import PlaylistItem from './components/playlist/playlistItem.jsx';

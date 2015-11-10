@@ -43,7 +43,7 @@ class PlaylistItem extends React.Component {
       const { isDragging, connectDragSource } = this.props;
 
       return connectDragSource(
-        <div className="ui segment">
+        <div className="ui segment react-index-top">
           This Should Be Draggable {id}
           {isDragging && ' (and I am being dragged now)'}
         </div>
