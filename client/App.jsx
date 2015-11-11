@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Navigation from './components/navigation/navigation.jsx';
 import Audio from './components/audioPlayer/audio.jsx';
 import PlaylistContainer from './components/playlist/playlistContainer.jsx';

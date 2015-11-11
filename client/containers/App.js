@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Playlist from '../components/playlist/playlistContainer.js';
+import DraggableWrapper from '../draggableWrapper.jsx';
 import * as PlaylistActions from '../actions/playlist.js';
 
 function mapStateToProps(state) {
@@ -13,4 +13,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(PlaylistActions, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Playlist);
+export default connect(mapStateToProps, mapDispatchToProps)(DraggableWrapper);

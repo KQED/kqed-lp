@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
-    './client/draggableWrapper.jsx'
+    './client/reduxWrapper.jsx'
   ],
   output: {
     path: path.join(__dirname, 'public'),    

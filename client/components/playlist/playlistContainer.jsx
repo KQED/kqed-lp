@@ -60,6 +60,8 @@ class PlaylistContainer extends React.Component {
   render() {
     const { position } = this.props;
     const { isOver, connectDropTarget } = this.props;
+    //may need to move this
+    const { addToPlaylist, removeFromPlaylist } = this.props;
     return connectDropTarget(
       <div className="ten wide column">
         <h2>Your playlist</h2>

@@ -1,4 +1,4 @@
-import { ADD_TO_PLAYLIST, REMOVE_FROM_PLAYLIST } from '../actions/counter';
+import { ADD_TO_PLAYLIST, REMOVE_FROM_PLAYLIST } from '../actions/playlist';
 
 export default function counter(state = 0, action) {
   switch (action.type) {
