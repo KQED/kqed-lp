@@ -1,9 +1,7 @@
 import { ADD_TO_PLAYLIST, REMOVE_FROM_PLAYLIST } from '../actions/playlist';
 
 const initialPlaylist = [
-  { audioUrl: "testUrl",
-    id: 0
-  }
+
 ];
 
 export default function playlists(state = initialPlaylist, action) {

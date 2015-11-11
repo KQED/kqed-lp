@@ -42,7 +42,7 @@ export default class Audio extends React.Component {
   render() {
     const { audioUrl } = this.props;
     const { actions } = this.props;
-
+    const { inPlaylist } = this.props;
     return (
       <div className = "seven wide column">
         <ReactPlayer
@@ -63,7 +63,7 @@ export default class Audio extends React.Component {
             <i className = {this.state.playing ? "pause icon" : "play icon"}></i>
             {this.state.playing ? "Pause" : "Play"}
           </button>
-          <AddToPlaylist audioUrl = {audioUrl} actions = {actions} />
+          <AddToPlaylist audioUrl = {audioUrl} actions = {actions} inPlaylist = {inPlaylist} />
           <Donate />
           <Share />
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { DragSource } from 'react-dnd';
+import Audio from '../audioPlayer/audio.jsx';
 
 const Types = {
   AUDIO: 'audio'
@@ -35,17 +36,14 @@ class PlaylistItem extends React.Component {
     super(props);
   }
   render() {
-      // Your component receives its own props as usual
-      const { id } = this.props;
-
       // These props are injected by React DnD,
       // as defined by your `collect` function above:
       const { isDragging, connectDragSource } = this.props;
+      const { audioUrl, actions, inPlaylist } = this.props;
 
       return connectDragSource(
         <div className="ui segment react-index-top">
-          This Should Be Draggable {id}
-          {isDragging && ' (and I am being dragged now)'}
+          <Audio audioUrl = {audioUrl} actions = {actions} inPlaylist ={inPlaylist} />
         </div>
       );
     }

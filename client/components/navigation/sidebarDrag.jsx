@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from 'react-sidebar';
 import {DropTarget} from 'react-dnd';
+import Audio from '../audioPlayer/audio.jsx';
 
 const Types = {
   AUDIO: 'audio'
@@ -42,7 +43,7 @@ class SidebarDrag extends React.Component {
   render() {
     const { playlist, actions } = this.props;
     const rows = playlist.map(playlistAudio =>
-        <a key={playlistAudio.id}>{playlistAudio.audioUrl}</a>
+        <a key={playlistAudio.id}><Audio audioUrl = {playlistAudio.audioUrl} actions = {actions} inPlaylist = {true} /></a>
       );
     const sidebarContent = <div className="item react-sidebar">{rows}</div>
     const { position } = this.props;

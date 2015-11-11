@@ -4,7 +4,7 @@ export default class AddToPlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      added: false
+      added: this.props.inPlaylist
     };
     this.addRemove = this.addRemove.bind(this);
   }
