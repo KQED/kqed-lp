@@ -33,11 +33,12 @@ const playlistTarget = {
 
     // Obtain the dragged item
     const item = monitor.getItem();
-
+    
+    component.addToPlaylist(item.audioUrl);
     // You can also do nothing and return a drop result,
     // which will be available as monitor.getDropResult()
     // in the drag source's endDrag() method
-    return { dropped: true, audioUrl: item.audioUrl };
+    return { dropped: true };
   }
 };
 
@@ -60,17 +61,16 @@ class PlaylistContainer extends React.Component {
      super(props, context);
      this.addToPlaylist = this.addToPlaylist.bind(this);
    }
-   addToPlaylist(droppedAudioUrl){
-      this.props.actions.addToPlaylist(droppedAudioUrl);
+   addToPlaylist(item){
+    this.props.actions.addToPlaylist(item);
    }
   render() {
     const { position } = this.props;
     const { isOver, connectDropTarget, hasDropped } = this.props;
     const { playlist, actions } = this.props;
+    console.log("Has Dropped in render");
+    console.log(hasDropped);
 
-    // if(hasDropped && hasDropped.dropped) {
-    //   this.addToPlaylist(hasDropped.audioUrl);
-    // }
     return connectDropTarget(
       <div className = "ten wide column">
         <h2>Your playlist</h2>

@@ -16,7 +16,9 @@ const playlistTarget = {
 
     const item = monitor.getItem();
 
-    return { moved: true };
+    component.addToPlaylist(item.audioUrl);
+
+    return { dragged: true };
   }
 };
 
@@ -32,6 +34,10 @@ function collect(connect, monitor) {
 class SidebarDrag extends React.Component { 
   constructor(props) {
     super(props);
+    this.addToPlaylist = this.addToPlaylist.bind(this);
+  }
+  addToPlaylist(item){
+   this.props.actions.addToPlaylist(item);
   }
   render() {
     const { playlist, actions } = this.props;
