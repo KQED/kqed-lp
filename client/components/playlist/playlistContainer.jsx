@@ -34,13 +34,10 @@ const playlistTarget = {
     // Obtain the dragged item
     const item = monitor.getItem();
 
-    // You can do something with it
-    // ChessActions.movePiece(item.fromPosition, props.position);
-
     // You can also do nothing and return a drop result,
     // which will be available as monitor.getDropResult()
     // in the drag source's endDrag() method
-    return { moved: true };
+    return { dropped: true, audioUrl: item.audioUrl };
   }
 };
 
@@ -51,6 +48,7 @@ function collect(connect, monitor) {
     connectDropTarget: connect.dropTarget(),
     // You can ask the monitor about the current drag state:
     isOver: monitor.isOver(),
+    hasDropped: monitor.getDropResult(),
     isOverCurrent: monitor.isOver({ shallow: true }),
     itemType: monitor.getItemType()
   };
@@ -59,23 +57,29 @@ function collect(connect, monitor) {
 
 class PlaylistContainer extends React.Component {
   constructor(props, context) {
-     super(props, context)
+     super(props, context);
+     this.addToPlaylist = this.addToPlaylist.bind(this);
+   }
+   addToPlaylist(droppedAudioUrl){
+      this.props.actions.addToPlaylist(droppedAudioUrl);
    }
   render() {
     const { position } = this.props;
-    const { isOver, connectDropTarget } = this.props;
-    //may need to move this
-    // const { addToPlaylist, removeFromPlaylist } = this.props;
+    const { isOver, connectDropTarget, hasDropped } = this.props;
     const { playlist, actions } = this.props;
-    console.log(this.props);
 
+    // if(hasDropped && hasDropped.dropped) {
+    //   this.addToPlaylist(hasDropped.audioUrl);
+    // }
     return connectDropTarget(
-      <div className="ten wide column">
+      <div className = "ten wide column">
         <h2>Your playlist</h2>
-        <div className={isOver ? "ui green inverted segment" : "ui tertiary inverted segment"}>
-          <i className="huge add square icon"></i>
-          <div className="ui items">
-            <AudioPlaylist playlist={playlist} actions={actions} />
+        <div className = {isOver ? "ui green inverted segment" : "ui tertiary inverted segment"}>
+          <i className = "huge add square icon"></i>
+          <div className = "ui items">
+            {playlist.map(playlistAudio =>
+              <AudioPlaylist playlist = {playlistAudio} key = {playlistAudio.id} actions = {actions} />
+              )}
           </div>
         </div>
       </div>

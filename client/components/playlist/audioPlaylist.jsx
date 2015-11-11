@@ -8,7 +8,7 @@ export default class AudioPlaylist extends React.Component {
     const { playlist, actions } = this.props;
     return (
       <div>
-        {playlist[0].audioUrl}
+        {playlist.audioUrl}
       </div>
     )
   }

@@ -8,7 +8,7 @@ const Types = {
 const listSource = {
   beginDrag(props) {
     // Return the data describing the dragged item
-    const item = { id: props.id };
+    const item = { audioUrl: props.audioUrl };
     return item;
   },
 

@@ -8,9 +8,9 @@ export function addToPlaylist(audioUrl) {
   };
 }
 
-export function removeFromPlaylist(id) {
+export function removeFromPlaylist(audioUrl) {
   return {
     type: REMOVE_FROM_PLAYLIST,
-    id
+    audioUrl
   };
 }

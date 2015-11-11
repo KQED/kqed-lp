@@ -13,6 +13,7 @@ export default class Navigation extends React.Component {
     this.setState({sidebarOpen: !this.state.sidebarOpen});
   }
   render() {
+    const { playlist, actions } = this.props;
 
     return (
       <div>
@@ -32,7 +33,7 @@ export default class Navigation extends React.Component {
             </div>
           </div>
         </div>
-          <SidebarDrag sidebarOpen={this.state.sidebarOpen} toggleSidebar={this.toggleSidebar}/>
+          <SidebarDrag playlist={playlist} actions={actions} sidebarOpen={this.state.sidebarOpen} toggleSidebar={this.toggleSidebar}/>
       </div>
     );
   }

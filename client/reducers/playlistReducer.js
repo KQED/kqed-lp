@@ -18,7 +18,7 @@ export default function playlists(state = initialPlaylist, action) {
       ];
     case REMOVE_FROM_PLAYLIST:
       return state.filter(audio =>
-              audio.id !== action.id
+              audio.audioUrl !== action.audioUrl
             );
     default:
       return state

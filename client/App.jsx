@@ -15,12 +15,12 @@ class App extends React.Component {
     const { playlist, actions } = this.props;
     return (
       <div>
-        <Navigation />
-        <div className="ui center aligned grid">
-          <Audio />
-          <PlaylistContainer playlist={playlist} actions={actions} />
-          <div className="eight wide column">
-            <PlaylistItem />
+        <Navigation playlist = {playlist} actions = {actions} />
+        <div className = "ui center aligned grid">
+          <Audio audioUrl = {"https://soundcloud.com/kurtledge/birdhouse-in-your-soul-they"} actions = {actions} />
+          <PlaylistContainer playlist = {playlist} actions = {actions} />
+          <div className = "eight wide column">
+            <PlaylistItem audioUrl = {"test2 Url"}/>
           </div>
         </div>
       </div>
