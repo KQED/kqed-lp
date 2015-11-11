@@ -8,13 +8,17 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import { DragDropContext } from 'react-dnd';
  
 class App extends React.Component {
+  constructor(props, context) {
+     super(props, context)
+   }
   render() {
+    const { playlist, actions } = this.props;
     return (
       <div>
         <Navigation />
         <div className="ui center aligned grid">
           <Audio />
-          <PlaylistContainer />
+          <PlaylistContainer playlist={playlist} actions={actions} />
           <div className="eight wide column">
             <PlaylistItem />
           </div>

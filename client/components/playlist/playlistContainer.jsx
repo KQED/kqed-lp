@@ -1,5 +1,6 @@
 import React from 'react';
 import {DropTarget} from 'react-dnd';
+import AudioPlaylist from './audioPlaylist';
 
 const Types = {
   AUDIO: 'audio'
@@ -57,17 +58,24 @@ function collect(connect, monitor) {
 
 
 class PlaylistContainer extends React.Component {
+  constructor(props, context) {
+     super(props, context)
+   }
   render() {
     const { position } = this.props;
     const { isOver, connectDropTarget } = this.props;
     //may need to move this
-    const { addToPlaylist, removeFromPlaylist } = this.props;
+    // const { addToPlaylist, removeFromPlaylist } = this.props;
+    const { playlist, actions } = this.props;
+    console.log(this.props);
+
     return connectDropTarget(
       <div className="ten wide column">
         <h2>Your playlist</h2>
         <div className={isOver ? "ui green inverted segment" : "ui tertiary inverted segment"}>
           <i className="huge add square icon"></i>
           <div className="ui items">
+            <AudioPlaylist playlist={playlist} actions={actions} />
           </div>
         </div>
       </div>

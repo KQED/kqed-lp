@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 
 export default class DraggableWrapper extends React.Component {
+  constructor(props, context) {
+     super(props, context)
+   }
   render() {
-    return <App />
+    const { playlist, actions } = this.props;
+
+    return <App playlist={playlist} actions={actions} />
   }
 }
-// ReactDOM.render(<App />, document.getElementById('app'));
