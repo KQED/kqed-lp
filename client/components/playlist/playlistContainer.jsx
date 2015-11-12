@@ -65,17 +65,15 @@ class PlaylistContainer extends React.Component {
     this.props.actions.addToPlaylist(item);
    }
   render() {
-    const { position } = this.props;
-    const { isOver, connectDropTarget, hasDropped } = this.props;
-    const { playlist, actions, inPlaylist } = this.props;
+    const { isOver, connectDropTarget, hasDropped, playlist, actions, inPlaylist } = this.props;
 
     return connectDropTarget(
-      <div className = "ten wide column">
+      <div className = "ten wide column react-playlist-padding">
         <h2>Your playlist</h2>
         <div className = {isOver ? "ui green inverted segment" : "ui tertiary inverted segment"}>
           <div className = "ui items">
-            {playlist.map(playlistAudio =>
-              <AudioPlaylist playlist = {playlistAudio} key = {playlistAudio.id} actions = {actions} />
+            {playlist.map(playlistTrack =>
+              <AudioPlaylist playlist = {playlistTrack} key = {playlistTrack.id} actions = {actions} />
               )}
           </div>
           <i className = "huge add square icon"></i>

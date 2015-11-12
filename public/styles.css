@@ -25,8 +25,26 @@
 }
 
 .react-index-top {
-  z-index: 9999;
+  z-index: 3;
 }
+
 .react-sidebar {
-  width: 200px;
+  margin-top: 40px;
 }
+
+.react-sidebar-empty {
+  width: 300px;
+}
+
+.react-draggable:hover {
+  cursor: move;
+}
+
+.react-playlist-padding {
+  padding-top: 3% !important;
+}
+
+/*.react-dragging {
+  cursor: move;
+}
+*/

@@ -1,8 +1,8 @@
 import ReactPlayer from 'react-player';
 import React from 'react';
-import AddToPlaylist from './add.jsx';
-import Donate from './donate.jsx';
-import Share from './share.jsx';
+import AddToPlaylist from './add';
+import ModalDonate from './modalDonate';
+import ModalShare from './modalShare';
 
 export default class Audio extends React.Component {
   constructor(props) {
@@ -40,15 +40,14 @@ export default class Audio extends React.Component {
       }
     }
   render() {
-    const { audioUrl } = this.props;
-    const { actions } = this.props;
-    const { inPlaylist } = this.props;
+    const { audioUrl, actions, inPlaylist } = this.props;
+
     return (
       <div className = "seven wide column">
         <ReactPlayer
           ref = 'player'
-          url = {this.state.url}
           playing = {this.state.playing} 
+          url = {this.state.url}
           onProgress = {this.onProgress} 
           volume = {this.state.volume} />
         <div className = "ui slider range">
@@ -64,8 +63,8 @@ export default class Audio extends React.Component {
             {this.state.playing ? "Pause" : "Play"}
           </button>
           <AddToPlaylist audioUrl = {audioUrl} actions = {actions} inPlaylist = {inPlaylist} />
-          <Donate />
-          <Share />
+          <ModalShare />
+          <ModalDonate />
       </div>
       )
     }

@@ -41,13 +41,11 @@ class SidebarDrag extends React.Component {
    this.props.actions.addToPlaylist(item);
   }
   render() {
-    const { playlist, actions } = this.props;
-    const rows = playlist.map(playlistAudio =>
-        <a key={playlistAudio.id}><Audio audioUrl = {playlistAudio.audioUrl} actions = {actions} inPlaylist = {true} /></a>
+    const { playlist, actions, isOver, connectDropTarget } = this.props;
+    const rows = playlist.map(playlistTrack =>
+        <a key={playlistTrack.id}><Audio audioUrl = {playlistTrack.audioUrl} actions = {actions} inPlaylist = {true} /></a>
       );
-    const sidebarContent = <div className="item react-sidebar">{rows}</div>
-    const { position } = this.props;
-    const { isOver, connectDropTarget } = this.props;
+    const sidebarContent = <div className={rows.length > 0 ? "item react-sidebar" : "item react-sidebar-empty"}>{rows}</div>
 
     return connectDropTarget(
       <div>
