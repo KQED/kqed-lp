@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import ZeroClipboard from 'react-zeroclipboard';
 
 const customStyles = {
   overlay : {
@@ -38,8 +39,9 @@ export default class ModalDonate extends React.Component {
     this.setState({modalIsOpen: false});
   }
   render() {
+    const { audioUrl } = this.props;
     return (
-      <div>
+      <span>
         <button className="ui button" onClick={this.openModal}>
           <i className="share square icon"></i>
           Share this track
@@ -49,8 +51,16 @@ export default class ModalDonate extends React.Component {
           onRequestClose={this.closeModal} style={customStyles}>
           <i className="big remove circle icon" onClick={this.closeModal}></i>
           <h2>Share this track</h2>
+          <div className="ui action input">
+            <input type="text" name="country" value={audioUrl} readOnly />
+            <ZeroClipboard text={audioUrl}>
+              <button className="ui right icon green button">
+                  <i className="copy icon"></i>
+              </button>
+            </ZeroClipboard>
+          </div>
         </Modal>
-      </div>
+      </span>
     );
   }
 }

@@ -40,7 +40,7 @@ export default class ModalDonate extends React.Component {
   }
   render() {
     return (
-      <div>
+      <span>
         <button className="ui button" onClick={this.openModal}>
           <i className={!this.state.donated ? "dollar icon" : "heart icon"}></i>
           {!this.state.donated ? "Donate" : "Thank You!"}
@@ -51,7 +51,7 @@ export default class ModalDonate extends React.Component {
           <i className="big remove circle icon" onClick={this.closeModal}></i>
           <h2>Donate to KQED</h2>
         </Modal>
-      </div>
+      </span>
     );
   }
 }

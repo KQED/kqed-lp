@@ -21,24 +21,24 @@ export default class Audio extends React.Component {
     this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
     this.onSeekChange = this.onSeekChange.bind(this);
   }
-  playPause() {
+  playPause() { 
       this.setState({ playing: !this.state.playing });
   }
   onSeekMouseDown(e) {
       this.setState({ seeking: true });
-    }
+  }
   onSeekChange(e) {
       this.setState({ played: parseFloat(e.target.value) });
-    }
+  }
   onSeekMouseUp(e) {
       this.setState({ seeking: false });
       this.refs.player.seekTo(parseFloat(e.target.value));
-    }
+  }
   onProgress(state) {
       if (!this.state.seeking) {
         this.setState(state);
       }
-    }
+  }
   render() {
     const { audioUrl, actions, inPlaylist } = this.props;
 
@@ -49,7 +49,8 @@ export default class Audio extends React.Component {
           playing = {this.state.playing} 
           url = {this.state.url}
           onProgress = {this.onProgress} 
-          volume = {this.state.volume} />
+          volume = {this.state.volume} 
+          height = {150} />
         <div className = "ui slider range">
           <input
             type = 'range' min = {0} max = {1} step = 'any'
@@ -63,7 +64,7 @@ export default class Audio extends React.Component {
             {this.state.playing ? "Pause" : "Play"}
           </button>
           <AddToPlaylist audioUrl = {audioUrl} actions = {actions} inPlaylist = {inPlaylist} />
-          <ModalShare />
+          <ModalShare audioUrl = {audioUrl}/>
           <ModalDonate />
       </div>
       )

@@ -21,12 +21,12 @@ class App extends React.Component {
           <SearchBar />
           <div className = "eight wide column">
             <PlaylistItem audioUrl = {"https://soundcloud.com/nightvaleradio/25-one-year-later-1"} actions = {actions} inPlaylist = {false}/>
+            <PlaylistItem audioUrl = {"http://pd.npr.org/npr-mp4/npr/me/2015/11/20151112_me_a_dc_pac_shutters_highlighting_fine_ethical_line_for_groups_across_the_country.mp4"} actions = {actions} inPlaylist = {false}/>
           </div>
         </div>
       </div>
     )
   }
 };
- 
 
 export default DragDropContext(HTML5Backend)(App);
