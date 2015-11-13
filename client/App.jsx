@@ -28,5 +28,5 @@ class App extends React.Component {
     )
   }
 };
-
+//DragDropContext enables drag and drop, using HTML5 drag and drop API (can be switched out)
 export default DragDropContext(HTML5Backend)(App);

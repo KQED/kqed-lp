@@ -5,7 +5,7 @@ import App from './containers/App';
 import configureStore from './store/configureStore';
 
 const store = configureStore();
-
+//top level Provider makes the app component "smart", i.e. aware of redux. 
 render(
   <Provider store={store}>
     <App />

@@ -1,9 +1,9 @@
 import { ADD_TO_PLAYLIST, REMOVE_FROM_PLAYLIST } from '../actions/playlist';
 
-const initialPlaylist = [
+//initial playlist is empty
+const initialPlaylist = [];
 
-];
-
+//set state to empty playlist, will add or remove to playlist based on action
 export default function playlists(state = initialPlaylist, action) {
   switch (action.type) {
     case ADD_TO_PLAYLIST:
@@ -19,6 +19,6 @@ export default function playlists(state = initialPlaylist, action) {
               audio.audioUrl !== action.audioUrl
             );
     default:
-      return state
+      return state;
   }
 }

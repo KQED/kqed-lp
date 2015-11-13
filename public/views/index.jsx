@@ -1,5 +1,5 @@
 var React = require('react');
-
+//this view is rendered server-side
 var Layout = React.createClass({
   render: function() {
     return (
