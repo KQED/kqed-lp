@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 
+//these custom styles are for the modal window
 const customStyles = {
   overlay : {
      position          : 'fixed',
@@ -17,7 +18,6 @@ const customStyles = {
     transform   : 'translate(-50%, -50%)'
   }
 };
-
 
 export default class ModalDonate extends React.Component {
   constructor(props) {

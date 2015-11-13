@@ -2,6 +2,7 @@ import React from 'react';
 import { DragSource } from 'react-dnd';
 import Audio from '../audioPlayer/audio.jsx';
 
+//this item is draggable to areas that also have the same type
 const Types = {
   AUDIO: 'audio'
 };
@@ -20,6 +21,8 @@ const listSource = {
 
     // When dropped on a compatible target, do something
     const item = monitor.getItem();
+
+    //TODO: use this drop result to perhaps remove from river of audio when added to playlist?
     const dropResult = monitor.getDropResult();
   }
 };

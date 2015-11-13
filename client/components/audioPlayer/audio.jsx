@@ -7,6 +7,7 @@ import ModalShare from './modalShare';
 export default class Audio extends React.Component {
   constructor(props) {
     super(props);
+    //these props are used for the audio player
     this.state = {
       url: this.props.audioUrl,
       playing: true,
@@ -17,6 +18,7 @@ export default class Audio extends React.Component {
     };
     this.playPause = this.playPause.bind(this);
     this.onProgress = this.onProgress.bind(this);
+    //these functions are for the audio scrub bar
     this.onSeekMouseDown = this.onSeekMouseDown.bind(this);
     this.onSeekMouseUp = this.onSeekMouseUp.bind(this);
     this.onSeekChange = this.onSeekChange.bind(this);

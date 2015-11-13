@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+//zero clipboard enables the user to copy and paste the url/iframe to their clipboard
 import ZeroClipboard from 'react-zeroclipboard';
 
 const customStyles = {
@@ -18,7 +19,6 @@ const customStyles = {
     transform   : 'translate(-50%, -50%)'
   }
 };
-
 
 export default class ModalDonate extends React.Component {
   constructor(props) {

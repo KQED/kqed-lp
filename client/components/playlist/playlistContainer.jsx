@@ -8,22 +8,6 @@ const Types = {
 
 const playlistTarget = {
 
-  // hover(props, monitor, component) {
-  //   console.log('hovering');
-  //   // This is fired very often and lets you perform side effects
-  //   // in response to the hover. You can't handle enter and leave
-  //   // here—if you need them, put monitor.isOver() into collect() so you
-  //   // can just use componentWillReceiveProps() to handle enter/leave.
-
-  //   // You can access the coordinates if you need them
-  //   const clientOffset = monitor.getClientOffset();
-  //   const componentRect = findDOMNode(component).getBoundingClientRect();
-
-  //   // You can check whether we're over a nested drop target
-  //   const isJustOverThisOne = monitor.isOver({ shallow: true });
-
-  // },
-
   drop(props, monitor, component) {
     if (monitor.didDrop()) {
       // If you want, you can check whether some nested
